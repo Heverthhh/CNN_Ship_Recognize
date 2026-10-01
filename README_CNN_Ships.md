@@ -1,4 +1,4 @@
-# 🚁 Clasificación de imágenes aéreas para detección de barcos
+#  Clasificación de imágenes aéreas para detección de barcos
 
 Sistema de visión artificial para la **clasificación binaria BARCO / NO BARCO** en imágenes aéreas y satelitales, desarrollado para un escenario de inspección y monitoreo portuario mediante un **UAV (drone)**.
 
@@ -6,7 +6,7 @@ El proyecto parte de imágenes tipo **ShipsNet** y evoluciona desde modelos clá
 
 ---
 
-## 🎯 Objetivo
+##  Objetivo
 
 Diseñar e implementar un clasificador capaz de determinar si una imagen aérea contiene o no una embarcación, con énfasis en:
 
@@ -23,7 +23,7 @@ Diseñar e implementar un clasificador capaz de determinar si una imagen aérea 
 
 ---
 
-## 🧠 Modelo final
+##  Modelo final
 
 El clasificador final utiliza:
 
@@ -94,7 +94,7 @@ Esta diferencia entre validación interna y externa es una parte importante del 
 
 ---
 
-## 🔬 Evolución metodológica
+##  Evolución metodológica
 
 El proyecto no se limitó a entrenar una sola arquitectura. Se desarrolló una secuencia de experimentos para justificar la selección final:
 
@@ -134,7 +134,7 @@ Los resultados de cada etapa se conservan en la carpeta `results/`.
 
 ---
 
-## 🖥️ Interfaz gráfica
+##  Interfaz gráfica
 
 La aplicación principal está implementada con **CustomTkinter**:
 
@@ -144,13 +144,13 @@ app.py
 
 Permite:
 
-- 📁 cargar una carpeta completa de imágenes;
-- 📄 cargar un archivo `labels.csv`;
-- ✍️ asignar etiquetas manualmente;
-- 🔍 clasificar una imagen individual;
-- ▶ procesar una carpeta completa;
-- ■ detener el procesamiento;
-- 🔁 activar o desactivar **Test-Time Augmentation**;
+-  cargar una carpeta completa de imágenes;
+-  cargar un archivo `labels.csv`;
+-  asignar etiquetas manualmente;
+-  clasificar una imagen individual;
+- procesar una carpeta completa;
+-  detener el procesamiento;
+-  activar o desactivar **Test-Time Augmentation**;
 - visualizar:
   - predicción;
   - `P(BARCO)`;
@@ -165,11 +165,11 @@ Permite:
   - Balanced Accuracy;
   - ROC-AUC;
 - visualizar la **matriz de confusión**;
-- 💾 exportar los resultados a CSV.
+-  exportar los resultados a CSV.
 
 ---
 
-## 🏗️ Arquitectura general
+##  Arquitectura general
 
 ```mermaid
 flowchart TD
@@ -194,7 +194,7 @@ flowchart TD
 
 ---
 
-## 📁 Estructura del repositorio
+##  Estructura del repositorio
 
 ```text
 CNN_Ships/
@@ -262,7 +262,7 @@ CNN_Ships/
 
 ---
 
-## ⚙️ Instalación
+##  Instalación
 
 ### 1. Clonar el repositorio
 
@@ -301,7 +301,7 @@ Si se dispone de una GPU NVIDIA compatible con CUDA, se recomienda instalar la v
 
 ---
 
-## 📦 Organización esperada de los datos
+##  Organización esperada de los datos
 
 El script de entrenamiento final espera una estructura equivalente a:
 
@@ -329,7 +329,7 @@ Total entrenamiento:  6000 imágenes
 
 ---
 
-## ▶️ Ejecutar la aplicación
+## Ejecutar la aplicación
 
 Desde la raíz del proyecto:
 
@@ -346,7 +346,7 @@ models/ship_classifier_final_config.json
 
 ---
 
-## 🔍 Inferencia desde código
+##  Inferencia desde código
 
 La lógica de inferencia está centralizada en:
 
@@ -386,7 +386,7 @@ La salida contiene información similar a:
 
 ---
 
-## 🏋️ Entrenamiento del modelo final
+##  Entrenamiento del modelo final
 
 Con los datos ubicados en las rutas esperadas:
 
@@ -465,7 +465,7 @@ results/efficientnet_5fold/efficientnet_5fold_summary.json
 
 ---
 
-## 🧪 Validación cruzada y prevención de fuga de información
+##  Validación cruzada y prevención de fuga de información
 
 Una consideración importante del proyecto es que múltiples recortes pueden proceder de la misma imagen o escena original.
 
@@ -487,7 +487,7 @@ Esto permite mantener las escenas separadas entre entrenamiento y validación y 
 
 ---
 
-## 🔁 Test-Time Augmentation
+## 🔁Test-Time Augmentation
 
 El archivo `src/predict.py` permite aplicar TTA mediante:
 
@@ -521,7 +521,7 @@ predict_image(
 
 ---
 
-## 🎚️ Threshold de decisión
+##  Threshold de decisión
 
 El threshold no está codificado directamente en la interfaz. Se lee desde:
 
@@ -549,7 +549,7 @@ Esto permite realizar estudios de sensibilidad del umbral sin modificar los peso
 
 ---
 
-## 📐 Métricas empleadas
+##  Métricas empleadas
 
 El proyecto reporta:
 
@@ -568,7 +568,7 @@ Esto permite evaluar tanto el desempeño estadístico como la viabilidad computa
 
 ---
 
-## 🎓 Relación con las evidencias ABET
+## Relación con las evidencias ABET
 
 | Evidencia | Implementación en el repositorio |
 |---|---|
@@ -579,7 +579,7 @@ Esto permite evaluar tanto el desempeño estadístico como la viabilidad computa
 
 ---
 
-## ⚠️ Limitaciones
+##  Limitaciones
 
 Aunque el desempeño en ShipsNet es muy alto, los experimentos externos evidencian **cambio de dominio**.
 
@@ -600,7 +600,7 @@ Por ello, para un despliegue real en UAV se recomienda continuar ampliando el co
 
 ---
 
-## 🔮 Trabajo futuro
+##  Trabajo futuro
 
 - incorporar más **hard negatives** de puertos, muelles y marinas;
 - evaluar calibración de probabilidades;
@@ -614,7 +614,7 @@ Por ello, para un despliegue real en UAV se recomienda continuar ampliando el co
 
 ---
 
-## 🛠️ Tecnologías
+## Tecnologías
 
 - Python 3
 - PyTorch
@@ -633,7 +633,7 @@ Por ello, para un despliegue real en UAV se recomienda continuar ampliando el co
 
 ---
 
-## 📚 Dataset de referencia
+##  Dataset de referencia
 
 El desarrollo utiliza como referencia el conjunto:
 
@@ -647,34 +647,6 @@ https://www.kaggle.com/datasets/rhammell/ships-in-satellite-imagery
 
 El dataset debe descargarse respetando sus condiciones de uso y licencia.
 
----
-
-## 👥 Autores
-
-Proyecto académico desarrollado para la asignatura de **Inteligencia Artificial — Ingeniería Mecatrónica**.
-
-```text
-Autores:
-- [Nombre del estudiante 1]
-- [Nombre del estudiante 2]
-- [Nombre del estudiante 3]
-
-Universidad:
-[Nombre de la institución]
-
-Periodo:
-2026-2
-```
-
----
-
-## 📄 Licencia
-
-Este repositorio corresponde a un proyecto académico.
-
-Antes de publicar pesos, datasets o recursos externos, revise las condiciones de licencia de cada fuente utilizada.
-
----
 
 ## ✅ Estado del proyecto
 
